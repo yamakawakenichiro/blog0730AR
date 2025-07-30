@@ -1,6 +1,7 @@
-import Link from "next/link"
-import { useState } from "react"
-import styles from "styles/nav.module.css"
+'use client'
+import Link from 'next/link'
+import { useState } from 'react'
+import styles from 'styles/nav.module.css'
 
 export default function Nav() {
   const [navIsOpen, setNavIsOpen] = useState(false)

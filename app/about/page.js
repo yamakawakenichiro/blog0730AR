@@ -5,20 +5,16 @@ import PostBody from 'components/post-body'
 import Contact from 'components/contact'
 import Accordion from 'components/accordion'
 import { TwoColumn, TwoColumnMain, TwoColumnSidebar } from 'components/two-column'
-
 import eyecatch from 'images/about.jpg'
-import Meta from 'components/meta'
+
+import { siteMeta } from 'lib/constants'
+const { siteTitle, siteUrl } = siteMeta
+
+import { openGraphMetadata, twitterMetadata } from 'lib/baseMetadata'
 
 export default function About() {
   return (
     <Container>
-      <Meta
-        pageTitle="アバウト"
-        pageDesc="About development activities"
-        pageImg={eyecatch.src}
-        pageImgW={eyecatch.width}
-        pageImgH={eyecatch.height}
-      />
       <Hero title="About" subtitle="About development activities" />
       <figure>
         <Image
@@ -63,4 +59,32 @@ export default function About() {
       </TwoColumn>
     </Container>
   )
+}
+
+const pageTitle = 'アバウト'
+const pageDesc = 'About development activities'
+const ogpTitle = `${pageTitle} | ${siteTitle}`
+const ogpUrl = new URL('/about', siteUrl).toString()
+export const metadata = {
+  title: pageTitle,
+  description: pageDesc,
+  openGraph: {
+    ...openGraphMetadata,
+    title: ogpTitle,
+    description: pageDesc,
+    url: ogpUrl,
+    images: [
+      {
+        url: eyecatch.src,
+        width: eyecatch.width,
+        height: eyecatch.height,
+      },
+    ],
+  },
+  twitter: {
+    ...twitterMetadata,
+    title: ogpTitle,
+    description: pageDesc,
+    images: [eyecatch.src],
+  },
 }

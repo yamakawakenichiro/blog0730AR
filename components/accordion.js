@@ -1,7 +1,8 @@
-import { useState, useRef } from "react"
-import styles from "styles/accordion.module.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCircleChevronDown } from "@fortawesome/free-solid-svg-icons"
+'use client'
+import { useState, useRef } from 'react'
+import styles from 'styles/accordion.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 export default function Accordion({ heading, children }) {
   const [textIsOpen, setTextIsOpen] = useState(false)
@@ -21,7 +22,7 @@ export default function Accordion({ heading, children }) {
         className={styles.text}
         ref={refText}
         style={{
-          "--text-height": refText.current ? `${refText.current.scrollHeight}px` : `0px`,
+          '--text-height': refText.current ? `${refText.current.scrollHeight}px` : `0px`,
         }}
       >
         <div className={styles.textInner}>{children}</div>
