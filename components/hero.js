@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from 'styles/hero.module.css'
-import world from 'images/world.png'
+import home from 'images/home.webp'
 
 export default function Hero({ title, subtitle, imageOn = false }) {
   return (
@@ -12,7 +12,7 @@ export default function Hero({ title, subtitle, imageOn = false }) {
       {imageOn && (
         <figure>
           <Image
-            src={world}
+            src={home}
             alt=""
             width={1500}
             height={1300}

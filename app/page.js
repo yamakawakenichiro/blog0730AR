@@ -17,7 +17,7 @@ export default async function Home() {
   }
   return (
     <Container>
-      <Hero title="WORLD" subtitle="世界の国々" imageOn />
+      <Hero title="WORLD" subtitle="世界の妖怪・伝説" imageOn />
       <Posts posts={posts} />
       <Pagination nextUrl="/blog" nextText="More Posts" />
     </Container>
