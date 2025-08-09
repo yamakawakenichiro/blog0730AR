@@ -1,5 +1,5 @@
 .flexContainer {
-  composes: sideByCenter from "styles/utils.module.css";
+  composes: sideByCenter from 'styles/utils.module.css';
 }
 .text {
   padding-top: calc(var(--display) * 0.5);
@@ -12,4 +12,10 @@
 }
 .subtitle {
   font-size: var(--small-heading2);
+}
+
+.hideOnMobile {
+  @media (max-width: 768px) {
+    display: none;
+  }
 }

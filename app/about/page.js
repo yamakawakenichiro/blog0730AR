@@ -15,7 +15,7 @@ import { openGraphMetadata, twitterMetadata } from 'lib/baseMetadata'
 export default function About() {
   return (
     <Container>
-      <Hero title="About" subtitle="About development activities" />
+      <Hero title="About" subtitle="About development activities" riveOn />
       <figure>
         <Image
           src={eyecatch}
